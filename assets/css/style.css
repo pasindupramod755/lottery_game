@@ -1,0 +1,77 @@
+input {
+    width: 50px;
+    text-align: center;
+    font-size: 24px;
+    margin: 5px;
+}
+
+button {
+    font-size: 18px;
+    padding: 5px 15px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #fff;
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 30px;
+    font-size: 32px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.ticket-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, background 0.3s;
+}
+
+input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background: #ff4b2b;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background: #ff416c;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
