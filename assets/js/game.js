@@ -8,12 +8,14 @@ document.getElementById("youInput").innerHTML = `
         <input type="button" value="OK" onclick="loadRandomNumber()" id="okBtn">
 `
 
-function getInput(){
+function getInput() {
     let inputLetter = document.getElementById("oneLetter").value;
     let inputnum1 = document.getElementById("inputfield0").value;
     let inputnum2 = document.getElementById("inputfield1").value;
     let inputnum3 = document.getElementById("inputfield2").value;
     let inputnum4 = document.getElementById("inputfield3").value;
+    
+
 
 }
 
@@ -49,6 +51,50 @@ function randomNumber() {
 }
 
 
-document.getElementById("oneLetter").addEventListener("input", function() {
-  this.value = this.value.replace(/[^A-Za-z]/g, "");
+document.getElementById("oneLetter").addEventListener("input", function () {
+    this.value = this.value.replace(/[^A-Za-z]/g, "");
+});
+
+document.getElementById("inputfield0").addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, "");
+    let num = parseInt(this.value, 10);
+    if (num > 80) {
+        this.value = "";
+    }
+    if (num === 0) {
+        this.value = "";
+    }
+});
+
+document.getElementById("inputfield1").addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, "");
+    let num = parseInt(this.value, 10);
+    if (num > 80) {
+        this.value = "";
+    }
+    if (num === 0) {
+        this.value = "";
+    }
+});
+
+document.getElementById("inputfield2").addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, "");
+    let num = parseInt(this.value, 10);
+    if (num > 80) {
+        this.value = "";
+    }
+    if (num === 0) {
+        this.value = "";
+    }
+});
+
+document.getElementById("inputfield3").addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, "");
+    let num = parseInt(this.value, 10);
+    if (num > 80) {
+        this.value = "";
+    }
+    if (num === 0) {
+        this.value = "";
+    }
 });
