@@ -1,6 +1,6 @@
 
 document.getElementById("youInput").innerHTML = `
-    <input type="text" id="inputfield" placeholder="A">
+    <input type="text" id="oneLetter" placeholder="A" pattern="[A-Za-z]+">
         <input type="text" id="inputfield0" placeholder="1">
         <input type="text" id="inputfield1" placeholder="1">
         <input type="text" id="inputfield2" placeholder="1">
@@ -8,6 +8,14 @@ document.getElementById("youInput").innerHTML = `
         <input type="button" value="OK" onclick="loadRandomNumber()" id="okBtn">
 `
 
+function getInput(){
+    let inputLetter = document.getElementById("oneLetter").value;
+    let inputnum1 = document.getElementById("inputfield0").value;
+    let inputnum2 = document.getElementById("inputfield1").value;
+    let inputnum3 = document.getElementById("inputfield2").value;
+    let inputnum4 = document.getElementById("inputfield3").value;
+
+}
 
 function loadRandomNumber() {
     document.getElementById("okBtn").disabled = true;
@@ -39,3 +47,8 @@ function randomNumber() {
     document.getElementById("field").value = englishLetter;
     console.log(englishLetter);
 }
+
+
+document.getElementById("oneLetter").addEventListener("input", function() {
+  this.value = this.value.replace(/[^A-Za-z]/g, "");
+});
