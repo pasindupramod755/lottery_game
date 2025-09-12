@@ -5,8 +5,16 @@ document.getElementById("youInput").innerHTML = `
         <input type="text" id="inputfield1" placeholder="1">
         <input type="text" id="inputfield2" placeholder="1">
         <input type="text" id="inputfield3" placeholder="1">
-        <input type="button" value="OK" onclick="loadRandomNumber()" id="okBtn">
+        <input type="button" value="OK" onclick="getInput()" id="okBtn">
 `
+
+function duplicateInput(num1, num2, num3, num4) {
+    let ar = [num1, num2, num3, num4];
+    return new Set(ar).size === ar.length;
+}
+
+
+
 
 function getInput() {
     let inputLetter = document.getElementById("oneLetter").value;
@@ -14,9 +22,15 @@ function getInput() {
     let inputnum2 = document.getElementById("inputfield1").value;
     let inputnum3 = document.getElementById("inputfield2").value;
     let inputnum4 = document.getElementById("inputfield3").value;
-    
-
-
+    if (inputLetter != "" && inputnum1 != "" && inputnum2 != "" && inputnum3 != "" && inputnum4 != "") {
+        if (duplicateInput(inputnum1, inputnum2, inputnum3, inputnum4)) {
+            loadRandomNumber();
+        } else {
+            alert("⚠️ Some numbers are duplicated!");
+        }
+    } else {
+        alert("⚠️ Please fill in all fields!");
+    }
 }
 
 function loadRandomNumber() {
