@@ -18,6 +18,7 @@ document.getElementById("intro").innerHTML = `
 
 
 function start() {
+    document.getElementById("inputField").innerHTML = ``
     document.getElementById("intro").innerHTML = ``
     document.getElementById("youInput").innerHTML = `
         <h2>Input Your Number</h2>
@@ -27,6 +28,8 @@ function start() {
         <input type="text" id="inputfield2" placeholder="1">
         <input type="text" id="inputfield3" placeholder="1">
         <input type="button" value="OK" onclick="getInput()" id="okBtn">
+        <input type="button" value="🏃‍♀️" onclick="location.reload()">
+
 `
 
     //---------------------------------- Validate Typing ----------------------------------------------------                       
@@ -117,7 +120,9 @@ function loadRandomNumber() {
         <input type="text" id="field1" disabled>
         <input type="text" id="field2" disabled>
         <input type="text" id="field3" disabled>
-        <input type="button" value="↻" onclick="location.reload()">
+        <input type="button" value="↻" onclick="start()">
+        <input type="button" value="🏃‍♀️" onclick="location.reload()">
+
 `
     randomNumber();
 
