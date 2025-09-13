@@ -5,7 +5,9 @@ let inputnum1 = 0;
 let inputnum2 = 0;
 let inputnum3 = 0;
 let inputnum4 = 0;
+let coin = 0;
 
+document.getElementById("coins").innerText = coin;
 document.getElementById("intro").innerHTML = `
         <div class="intro-box">
             <h2>🎮 Welcome to the Random Number Game!</h2>
@@ -153,13 +155,10 @@ function randomNumber() {
 
 
 
-
-
-
-
 function randomAndInputDublicate() {
     if (document.getElementById("field").value == inputLetter) {
         document.getElementById("field").style.backgroundColor = "lightgreen"
+        coin += 10;
     } else {
         document.getElementById("field").style.backgroundColor = "red"
     }
@@ -167,9 +166,13 @@ function randomAndInputDublicate() {
     for (let i = 0; i < randomNumArray.length; i++) {
         if (randomNumArray[i] == Number(inputnum1) || randomNumArray[i] == Number(inputnum2) || randomNumArray[i] == Number(inputnum3) || randomNumArray[i] == Number(inputnum4)) {
             document.getElementById("field" + i).style.backgroundColor = "lightgreen"
+            coin += 10;
+
         } else {
             document.getElementById("field" + i).style.backgroundColor = "red"
         }
     }
+    document.getElementById("coins").innerText = coin;
+
 
 }
