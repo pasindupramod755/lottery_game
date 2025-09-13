@@ -1,5 +1,6 @@
 
 const randomNumArray = [];
+let inputLetter = "";
 let inputnum1 = 0;
 let inputnum2 = 0;
 let inputnum3 = 0;
@@ -18,13 +19,13 @@ document.getElementById("youInput").innerHTML = `
 
 function duplicateInput(num1, num2, num3, num4) {
     let ar = [num1, num2, num3, num4];
-    console.log(new Set(ar));  
+    console.log(new Set(ar));
     return new Set(ar).size === ar.length;
 }
 
 
 function getInput() {
-    let inputLetter = document.getElementById("oneLetter").value;
+    inputLetter = document.getElementById("oneLetter").value;
     inputnum1 = document.getElementById("inputfield0").value;
     inputnum2 = document.getElementById("inputfield1").value;
     inputnum3 = document.getElementById("inputfield2").value;
@@ -71,6 +72,7 @@ function randomNumber() {
     let englishLetter = englishLetterKey.charAt(englishLetterIndex);
     document.getElementById("field").value = englishLetter;
     console.log(englishLetter);
+    randomAndInputDublicate();
 }
 
 
@@ -128,3 +130,21 @@ document.getElementById("inputfield3").addEventListener("input", function () {
 });
 
 //---------------------------------------------------------------------------------------------------------------
+
+
+function randomAndInputDublicate() {
+    if (document.getElementById("field").value == inputLetter) {
+        document.getElementById("field").style.backgroundColor = "lightgreen"
+    } else {
+        document.getElementById("field").style.backgroundColor = "red"
+    }
+
+    for (let i = 0; i < randomNumArray.length; i++) {
+        if (randomNumArray[i] == Number(inputnum1) || randomNumArray[i] == Number(inputnum2) || randomNumArray[i] == Number(inputnum3) || randomNumArray[i] == Number(inputnum4)) {
+            document.getElementById("field" + i).style.backgroundColor = "lightgreen"
+        } else {
+            document.getElementById("field" + i).style.backgroundColor = "red"
+        }
+    }
+
+}
