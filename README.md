@@ -49,5 +49,5 @@ The game is lightweight, responsive, and easy to play. 🕹️
 1. 📥 Clone the repo:
 
 ```bash
-git clone https://github.com/yourname/random-number-game.git
+git clone https://github.com/pasindupramod755/random-number-game.git
 cd random-number-game
