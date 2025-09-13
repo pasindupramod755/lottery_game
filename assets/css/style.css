@@ -42,3 +42,44 @@ input:focus {
     background: rgba(255, 255, 255, 0.4);
     transform: scale(1.1);
 }
+
+.intro-box {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;     
+  gap: 15px;               
+  padding: 30px 40px; 
+  width: 400px;
+  max-width: 90%;         
+  text-align: center;
+}
+
+.intro-box h2 {
+  font-size: 30px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.intro-box p {
+  font-size: 25px;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+.intro-box button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.intro-box button:hover {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
