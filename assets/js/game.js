@@ -28,6 +28,59 @@ function start() {
         <input type="text" id="inputfield3" placeholder="1">
         <input type="button" value="OK" onclick="getInput()" id="okBtn">
 `
+
+    //---------------------------------- Validate Typing ----------------------------------------------------                       
+
+    document.getElementById("oneLetter").addEventListener("input", function () {
+        this.value = this.value.replace(/[^A-Za-z]/g, "");
+    });
+
+    document.getElementById("inputfield0").addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9]/g, "");
+        let num = parseInt(this.value, 10);
+        if (num > 80) {
+            this.value = "";
+        }
+        if (num === 0) {
+            this.value = "";
+        }
+    });
+
+    document.getElementById("inputfield1").addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9]/g, "");
+        let num = parseInt(this.value, 10);
+        if (num > 80) {
+            this.value = "";
+        }
+        if (num === 0) {
+            this.value = "";
+        }
+    });
+
+    document.getElementById("inputfield2").addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9]/g, "");
+        let num = parseInt(this.value, 10);
+        if (num > 80) {
+            this.value = "";
+        }
+        if (num === 0) {
+            this.value = "";
+        }
+    });
+
+    document.getElementById("inputfield3").addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9]/g, "");
+        let num = parseInt(this.value, 10);
+        if (num > 80) {
+            this.value = "";
+        }
+        if (num === 0) {
+            this.value = "";
+        }
+    });
+
+    //---------------------------------------------------------------------------------------------------------------
+
 }
 
 function duplicateInput(num1, num2, num3, num4) {
@@ -67,6 +120,8 @@ function loadRandomNumber() {
         <input type="button" value="↻" onclick="location.reload()">
 `
     randomNumber();
+
+
 }
 
 
@@ -84,7 +139,7 @@ function randomNumber() {
 
     const englishLetterKey = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    let englishLetterIndex = Math.floor(Math.random() * 27);
+    let englishLetterIndex = Math.floor(Math.random() * 0);
     let englishLetter = englishLetterKey.charAt(englishLetterIndex);
     document.getElementById("field").value = englishLetter;
     console.log(englishLetter);
@@ -95,57 +150,6 @@ function randomNumber() {
 
 
 
-//---------------------------------- Validate Typing ----------------------------------------------------                       
-
-document.getElementById("oneLetter").addEventListener("input", function () {
-    this.value = this.value.replace(/[^A-Za-z]/g, "");
-});
-
-document.getElementById("inputfield0").addEventListener("input", function () {
-    this.value = this.value.replace(/[^0-9]/g, "");
-    let num = parseInt(this.value, 10);
-    if (num > 80) {
-        this.value = "";
-    }
-    if (num === 0) {
-        this.value = "";
-    }
-});
-
-document.getElementById("inputfield1").addEventListener("input", function () {
-    this.value = this.value.replace(/[^0-9]/g, "");
-    let num = parseInt(this.value, 10);
-    if (num > 80) {
-        this.value = "";
-    }
-    if (num === 0) {
-        this.value = "";
-    }
-});
-
-document.getElementById("inputfield2").addEventListener("input", function () {
-    this.value = this.value.replace(/[^0-9]/g, "");
-    let num = parseInt(this.value, 10);
-    if (num > 80) {
-        this.value = "";
-    }
-    if (num === 0) {
-        this.value = "";
-    }
-});
-
-document.getElementById("inputfield3").addEventListener("input", function () {
-    this.value = this.value.replace(/[^0-9]/g, "");
-    let num = parseInt(this.value, 10);
-    if (num > 80) {
-        this.value = "";
-    }
-    if (num === 0) {
-        this.value = "";
-    }
-});
-
-//---------------------------------------------------------------------------------------------------------------
 
 
 function randomAndInputDublicate() {
