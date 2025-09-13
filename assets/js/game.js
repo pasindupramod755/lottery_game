@@ -146,7 +146,7 @@ function randomNumber() {
 
     const englishLetterKey = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    let englishLetterIndex = Math.floor(Math.random() * 0);
+    let englishLetterIndex = Math.floor(Math.random() * 26);
     let englishLetter = englishLetterKey.charAt(englishLetterIndex);
     document.getElementById("field").value = englishLetter;
     console.log(englishLetter);
