@@ -7,11 +7,12 @@ let inputnum3 = 0;
 let inputnum4 = 0;
 let coin = 0;
 
+
 document.getElementById("coins").innerText = coin;
 document.getElementById("intro").innerHTML = `
         <div class="intro-box">
             <h2>🎮 Welcome to the Random Number Game!</h2>
-            <p>👉 You will get 4 random numbers (no duplicates).<br>
+            <p>👉 You will get 4 random numbers (no duplicates) and 1 English Letter.<br>
                 Try to guess or match them correctly!</p>
             <button onclick="start()">Start Game 🚀</button>
         </div>
@@ -146,7 +147,7 @@ function randomNumber() {
 
     const englishLetterKey = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    let englishLetterIndex = Math.floor(Math.random() * 26);
+    let englishLetterIndex = Math.floor(Math.random() * 0);
     let englishLetter = englishLetterKey.charAt(englishLetterIndex);
     document.getElementById("field").value = englishLetter;
     console.log(englishLetter);
@@ -158,7 +159,8 @@ function randomNumber() {
 function randomAndInputDublicate() {
     if (document.getElementById("field").value == inputLetter) {
         document.getElementById("field").style.backgroundColor = "lightgreen"
-        coin += 10;
+        coin = Number(document.getElementById("coins").innerText) + 10;
+        document.getElementById("coins").innerText = coin;
     } else {
         document.getElementById("field").style.backgroundColor = "red"
     }
@@ -166,7 +168,7 @@ function randomAndInputDublicate() {
     for (let i = 0; i < randomNumArray.length; i++) {
         if (randomNumArray[i] == Number(inputnum1) || randomNumArray[i] == Number(inputnum2) || randomNumArray[i] == Number(inputnum3) || randomNumArray[i] == Number(inputnum4)) {
             document.getElementById("field" + i).style.backgroundColor = "lightgreen"
-            coin += 10;
+            coin = Number(document.getElementById("coins").innerText) + 10;
 
         } else {
             document.getElementById("field" + i).style.backgroundColor = "red"
