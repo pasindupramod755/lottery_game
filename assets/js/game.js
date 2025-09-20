@@ -7,11 +7,12 @@ let inputnum3 = 0;
 let inputnum4 = 0;
 let coin = 0;
 
+
 document.getElementById("coins").innerText = coin;
 document.getElementById("intro").innerHTML = `
         <div class="intro-box">
             <h2>🎮 Welcome to the Random Number Game!</h2>
-            <p>👉 You will get 4 random numbers (no duplicates).<br>
+            <p>👉 You will get 4 random numbers (no duplicates) and 1 English Letter.<br>
                 Try to guess or match them correctly!</p>
             <button onclick="start()">Start Game 🚀</button>
         </div>
@@ -33,6 +34,40 @@ function start() {
         <input type="button" value="🏃‍♀️" onclick="location.reload()">
 
 `
+
+
+    //------------------------------------input------------------------------------------------------------
+
+    document.getElementById("oneLetter").addEventListener("keypress", e => {
+        if (e.key === "Enter") {
+            document.getElementById("inputfield0").focus();
+        }
+    });
+
+    document.getElementById("inputfield0").addEventListener("keypress", e => {
+        if (e.key === "Enter") {
+            document.getElementById("inputfield1").focus();
+        }
+    });
+
+    document.getElementById("inputfield1").addEventListener("keypress", e => {
+        if (e.key === "Enter") {
+            document.getElementById("inputfield2").focus();
+        }
+    });
+
+    document.getElementById("inputfield2").addEventListener("keypress", e => {
+        if (e.key === "Enter") {
+            document.getElementById("inputfield3").focus();
+        }
+    });
+
+    document.getElementById("inputfield3").addEventListener("keypress", e => {
+        if (e.key === "Enter") {
+            document.getElementById("okBtn").click();
+        }
+    });
+
 
     //---------------------------------- Validate Typing ----------------------------------------------------                       
 
@@ -126,6 +161,8 @@ function loadRandomNumber() {
         <input type="button" value="🏃‍♀️" onclick="location.reload()">
 
 `
+
+
     randomNumber();
 
 
@@ -156,23 +193,29 @@ function randomNumber() {
 
 
 function randomAndInputDublicate() {
+    let coin = Number(document.getElementById("coins").innerText);
+
     if (document.getElementById("field").value == inputLetter) {
-        document.getElementById("field").style.backgroundColor = "lightgreen"
+        document.getElementById("field").style.backgroundColor = "lightgreen";
         coin += 10;
     } else {
-        document.getElementById("field").style.backgroundColor = "red"
+        document.getElementById("field").style.backgroundColor = "red";
     }
+
+    let playerNums = [Number(inputnum1), Number(inputnum2), Number(inputnum3), Number(inputnum4)];
 
     for (let i = 0; i < randomNumArray.length; i++) {
-        if (randomNumArray[i] == Number(inputnum1) || randomNumArray[i] == Number(inputnum2) || randomNumArray[i] == Number(inputnum3) || randomNumArray[i] == Number(inputnum4)) {
-            document.getElementById("field" + i).style.backgroundColor = "lightgreen"
+        if (playerNums.includes(randomNumArray[i])) {
+            document.getElementById("field" + i).style.backgroundColor = "lightgreen";
             coin += 10;
-
         } else {
-            document.getElementById("field" + i).style.backgroundColor = "red"
+            document.getElementById("field" + i).style.backgroundColor = "red";
         }
     }
+
     document.getElementById("coins").innerText = coin;
-
-
 }
+
+
+
+
