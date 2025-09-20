@@ -35,6 +35,40 @@ function start() {
 
 `
 
+
+    //------------------------------------input------------------------------------------------------------
+
+    document.getElementById("oneLetter").addEventListener("keypress", e => {
+        if (e.key === "Enter") {
+            document.getElementById("inputfield0").focus();
+        }
+    });
+
+    document.getElementById("inputfield0").addEventListener("keypress", e => {
+        if (e.key === "Enter") {
+            document.getElementById("inputfield1").focus();
+        }
+    });
+
+    document.getElementById("inputfield1").addEventListener("keypress", e => {
+        if (e.key === "Enter") {
+            document.getElementById("inputfield2").focus();
+        }
+    });
+
+    document.getElementById("inputfield2").addEventListener("keypress", e => {
+        if (e.key === "Enter") {
+            document.getElementById("inputfield3").focus();
+        }
+    });
+
+    document.getElementById("inputfield3").addEventListener("keypress", e => {
+        if (e.key === "Enter") {
+            document.getElementById("okBtn").click();
+        }
+    });
+
+
     //---------------------------------- Validate Typing ----------------------------------------------------                       
 
     document.getElementById("oneLetter").addEventListener("input", function () {
@@ -127,6 +161,8 @@ function loadRandomNumber() {
         <input type="button" value="🏃‍♀️" onclick="location.reload()">
 
 `
+
+
     randomNumber();
 
 
@@ -147,7 +183,7 @@ function randomNumber() {
 
     const englishLetterKey = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    let englishLetterIndex = Math.floor(Math.random() * 0);
+    let englishLetterIndex = Math.floor(Math.random() * 26);
     let englishLetter = englishLetterKey.charAt(englishLetterIndex);
     document.getElementById("field").value = englishLetter;
     console.log(englishLetter);
@@ -157,24 +193,29 @@ function randomNumber() {
 
 
 function randomAndInputDublicate() {
+    let coin = Number(document.getElementById("coins").innerText);
+
     if (document.getElementById("field").value == inputLetter) {
-        document.getElementById("field").style.backgroundColor = "lightgreen"
-        coin = Number(document.getElementById("coins").innerText) + 10;
-        document.getElementById("coins").innerText = coin;
+        document.getElementById("field").style.backgroundColor = "lightgreen";
+        coin += 10;
     } else {
-        document.getElementById("field").style.backgroundColor = "red"
+        document.getElementById("field").style.backgroundColor = "red";
     }
+
+    let playerNums = [Number(inputnum1), Number(inputnum2), Number(inputnum3), Number(inputnum4)];
 
     for (let i = 0; i < randomNumArray.length; i++) {
-        if (randomNumArray[i] == Number(inputnum1) || randomNumArray[i] == Number(inputnum2) || randomNumArray[i] == Number(inputnum3) || randomNumArray[i] == Number(inputnum4)) {
-            document.getElementById("field" + i).style.backgroundColor = "lightgreen"
-            coin = Number(document.getElementById("coins").innerText) + 10;
-
+        if (playerNums.includes(randomNumArray[i])) {
+            document.getElementById("field" + i).style.backgroundColor = "lightgreen";
+            coin += 10;
         } else {
-            document.getElementById("field" + i).style.backgroundColor = "red"
+            document.getElementById("field" + i).style.backgroundColor = "red";
         }
     }
+
     document.getElementById("coins").innerText = coin;
-
-
 }
+
+
+
+
